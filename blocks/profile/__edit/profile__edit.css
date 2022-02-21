@@ -1,0 +1,15 @@
+.profile__edit {
+    margin-left: 18px;
+    border: 1px solid white;
+    width: 24px;
+    height: 24px;
+    background-color: black;
+    cursor: pointer;
+    background-image: url('../../../images/profile__edit.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.profile__edit:hover {
+    opacity: .6;
+}
