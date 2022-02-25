@@ -3,7 +3,7 @@
     border: 1px solid white;
     width: 24px;
     height: 24px;
-    background-color: black;
+    background-color: transparent;
     cursor: pointer;
     background-image: url('../../../images/profile__edit.svg');
     background-position: center;
@@ -12,4 +12,12 @@
 
 .profile__edit:hover {
     opacity: .6;
+}
+
+@media screen and (max-width: 425px) {
+    .profile__edit {
+        width: 18px;
+        height: 18px;
+        margin-left: 10px;
+    }
 }

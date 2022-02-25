@@ -9,9 +9,6 @@
 </head>
 
 <body class="root">
-    <!-- <div class="popup">
- контейнер для поп-ап редактирования
-    </div> -->
     <header class="header">
         <img class="header__logo" src="./images/header__logo.svg" alt="Логотип">
     </header>
@@ -29,14 +26,64 @@
             </div>
             <button class="profile__addbutton"></button>
         </section>
-        <section class="pictures">
-            
+        <section class="cards">
+            <article class="cards__element">
+                <img class="cards__image" src="./images/Cat.jpg" alt="Кот">
+                    <div class="cards__caption">
+                        <p class="cards__text">Кот</p>
+                        <button class="cards__like"></button>
+                    </div>
+            </article>
+            <article class="cards__element">
+                <img class="cards__image" src="./images/Bird.jpg" alt="Птица">
+                    <div class="cards__caption">
+                        <p class="cards__text">Сосновый чиж</p>
+                        <button class="cards__like"></button>
+                    </div>
+            </article>
+            <article class="cards__element">
+                <img class="cards__image" src="./images/Croatia.jpg" alt="Хорватия">
+                    <div class="cards__caption">
+                        <p class="cards__text">Хорватия</p>
+                        <button class="cards__like"></button>
+                    </div>
+            </article>
+            <article class="cards__element">
+                <img class="cards__image" src="./images/Deer.jpg" alt="Олень">
+                    <div class="cards__caption">
+                        <p class="cards__text">Олень</p>
+                        <button class="cards__like"></button>
+                    </div>
+            </article>
+            <article class="cards__element">
+                <img class="cards__image" src="./images/Guangzhou.jpg" alt="Гуанчжоу">
+                    <div class="cards__caption">
+                        <p class="cards__text">Гуанчжоу</p>
+                        <button class="cards__like"></button>
+                    </div>
+            </article>
+            <article class="cards__element">
+                <img class="cards__image" src="./images/Italy.jpg" alt="Италия">
+                    <div class="cards__caption">
+                        <p class="cards__text">Италия</p>
+                        <button class="cards__like"></button>
+                    </div>
+            </article>
         </section>
     </main>
     <footer class="footer">
-
+        <p class="footer__copyright">&COPY; 2022 Mesto Russia</p>
     </footer>
-    <script></script>
+    <div class="popup">
+        <form class="popup__container">
+            <button class="popup__close"></button>
+            <h1 class="popup__title">Редактировать профиль</h1>
+                    <input class="popup__input-name" type="text" name="profileName" placeholder="Имя" value="Жак-Ив Кусто">
+                    <input class="popup__input-about" type="text" name="profileJob" placeholder="О себе" value="Исследователь океана">
+          <button class="popup__submit" type="submit">Сохранить</button>
+        </form>
+        <div>
+    <script src="./blocks/scripts/popupFormHandler.js"></script>
 </body>
 
 </html>
