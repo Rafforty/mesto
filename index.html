@@ -19,54 +19,54 @@
                     <div class="profile__info-container">
                         <div class="profile__wrapper">
                             <h1 class="profile__name">Жак-Ив Кусто</h1>
-                            <button class="profile__edit"></button>
+                            <button class="profile__edit" type="button" aria-label="edit profile"></button>
                         </div>
                         <h2 class="profile__job">Исследователь океана</h2>
                     </div>
             </div>
-            <button class="profile__addbutton"></button>
+            <button class="profile__addbutton" type="button" aria-label="add button"></button>
         </section>
         <section class="cards">
             <article class="cards__element">
                 <img class="cards__image" src="./images/Cat.jpg" alt="Кот">
                     <div class="cards__caption">
                         <h3 class="cards__text">Кот</h3>
-                        <button class="cards__like"></button>
+                        <button class="cards__like" type="button" aria-label="like"></button>
                     </div>
             </article>
             <article class="cards__element">
                 <img class="cards__image" src="./images/Bird.jpg" alt="Птица">
                     <div class="cards__caption">
                         <h3 class="cards__text">Сосновый чиж</h3>
-                        <button class="cards__like"></button>
+                        <button class="cards__like" type="button" aria-label="like"></button>
                     </div>
             </article>
             <article class="cards__element">
                 <img class="cards__image" src="./images/Croatia.jpg" alt="Хорватия">
                     <div class="cards__caption">
                         <h3 class="cards__text">Хорватия</h3>
-                        <button class="cards__like"></button>
+                        <button class="cards__like" type="button" aria-label="like"></button>
                     </div>
             </article>
             <article class="cards__element">
                 <img class="cards__image" src="./images/Deer.jpg" alt="Олень">
                     <div class="cards__caption">
                         <h3 class="cards__text">Олень</h3>
-                        <button class="cards__like"></button>
+                        <button class="cards__like" type="button" aria-label="like"></button>
                     </div>
             </article>
             <article class="cards__element">
                 <img class="cards__image" src="./images/Guangzhou.jpg" alt="Гуанчжоу">
                     <div class="cards__caption">
                         <h3 class="cards__text">Гуанчжоу</h3>
-                        <button class="cards__like"></button>
+                        <button class="cards__like" type="button" aria-label="like"></button>
                     </div>
             </article>
             <article class="cards__element">
                 <img class="cards__image" src="./images/Italy.jpg" alt="Италия">
                     <div class="cards__caption">
                         <h3 class="cards__text">Италия</h3>
-                        <button class="cards__like"></button>
+                        <button class="cards__like" type="button" aria-label="like"></button>
                     </div>
             </article>
         </section>
@@ -75,15 +75,15 @@
         <p class="footer__copyright">&COPY; 2022 Mesto Russia</p>
     </footer>
     <div class="popup">
-        <form class="popup__container">
-            <button class="popup__close"></button>
+        <form class="popup__container" name="profileEditForm">
+            <button class="popup__close" type="button" aria-label="close"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
-                    <input class="popup__input-name" type="text" name="profileName" placeholder="Имя" value="Жак-Ив Кусто">
-                    <input class="popup__input-about" type="text" name="profileJob" placeholder="О себе" value="Исследователь океана">
+                    <input class="popup__input popup__input_about" type="text" name="profileName" placeholder="Имя" value="">
+                    <input class="popup__input popup__input_job" type="text" name="profileJob" placeholder="О себе" value="">
           <button class="popup__submit" type="submit">Сохранить</button>
         </form>
     </div>
-    <script src="./blocks/scripts/popupFormHandler.js"></script>
+    <script src="./scripts/index.js"></script>
 </body>
 
 </html>
