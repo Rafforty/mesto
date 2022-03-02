@@ -16,4 +16,4 @@
 
 **GH pages**
 
-*[Ссылка на проект на GH pages](https://rafforty.github.io/mesto/index.html)
+* [Ссылка на проект на GH pages](https://rafforty.github.io/mesto/index.html)
