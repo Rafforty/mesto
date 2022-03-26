@@ -53,8 +53,6 @@ const initialCards = [
 
 function openPopup(popup) {   
   popup.classList.add('popup_type_open');
-  nameInput.value = profileName.textContent;
-  jobInput.value = profileAbout.textContent;
 };
 
 function closePopup(popup) {
@@ -68,9 +66,6 @@ function submitFormProfile (evt) {
   closePopup(popup);
 };
 
-function togglePopupCard () {
-  popupCard.classList.toggle('popup_type_open');
-};
 
 function renderCards(element) {
   const newCard = cardTemplate.querySelector('.cards__element').cloneNode(true);
@@ -120,6 +115,8 @@ initialCards.forEach(function(el){
 })
 
 popupOpen.addEventListener('click', ()=>{
+  nameInput.value = profileName.textContent;
+  jobInput.value = profileAbout.textContent;
   openPopup(popup);
 });
 popupClose.addEventListener('click', ()=>{
