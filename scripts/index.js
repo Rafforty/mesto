@@ -7,19 +7,19 @@ const jobInput = document.querySelector('.popup__input_job');
 const profileName = document.querySelector('.profile__name');
 const profileAbout = document.querySelector('.profile__job');
 
-const cards = document.querySelector('.cards');
+const cardsContainer = document.querySelector('.cards');
 const cardTemplate = document.querySelector('#cards-template').content;
 
 const popupCard = document.querySelector('#popup__addCard');
 const formCard = document.querySelector('#popup__container_place');
 const cardAddBtn = document.querySelector('.profile__addbutton');
-const closeCard = document.querySelector('#popup__close-place');
+const cardCloseBtn = document.querySelector('#popup__close-place');
 const cardNameInput = document.querySelector('#placeName');
 const cardImageInput = document.querySelector('#placeLink');
 const popupOpenImg = document.querySelector('#popup__preview');
 const popupImage = document.querySelector('.popup__image');
 const popupCaption = document.querySelector('.popup__caption');
-const closePreview = document.querySelector('#closePreview');
+const previewCloseBtn = document.querySelector('#closePreview');
 
 const saveButton = formCard.querySelector('.popup__submit');
 
@@ -60,12 +60,12 @@ function openPopup(popup) {
 
 function closePopup(popup) {
   popup.classList.remove('popup_type_open');
-  document.addEventListener('keyup', handleEscUp);
+  document.removeEventListener('keyup', handleEscUp);
 };
 
 function handleEscUp (evt) {
   evt.preventDefault(); 
-  if (evt.which === 27) {
+  if (evt.keyCode === 27) {
   const activePopup = document.querySelector('.popup_type_open'); 
   closePopup(activePopup);
   };
@@ -117,7 +117,7 @@ function renderCards(element) {
 function submitFormCard(event) {
     event.preventDefault();
     const addCard = ({name: cardNameInput.value, link: cardImageInput.value});
-    cards.prepend(renderCards(addCard));
+    cardsContainer.prepend(renderCards(addCard));
     closePopup(popupCard);
     formCard.reset();
     saveButton.classList.add('popup__submit_type_disabled');
@@ -125,7 +125,7 @@ function submitFormCard(event) {
 };
 
 initialCards.forEach(function(el){
-  cards.append(renderCards(el));
+  cardsContainer.append(renderCards(el));
 })
 
 popupOpen.addEventListener('click', ()=>{
@@ -139,10 +139,10 @@ popupClose.addEventListener('click', ()=>{
 cardAddBtn.addEventListener('click', ()=>{
   openPopup(popupCard);
 });
-closeCard.addEventListener('click', ()=>{
+cardCloseBtn.addEventListener('click', ()=>{
   closePopup(popupCard);
 });
-closePreview.addEventListener('click', ()=> {
+previewCloseBtn.addEventListener('click', ()=> {
   closePopup(popupOpenImg);
 });
 
