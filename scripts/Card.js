@@ -5,7 +5,7 @@ export default class Card {
         this._cardSelector = cardSelector;
     }
 
-    _getTemplate(){
+    _getTemplate = () => {
         const cardElement = document.querySelector('#cards-template').content.cloneNode(true);
 
         return cardElement;
@@ -27,15 +27,15 @@ export default class Card {
         popupImagePreview.classList.add('popup_type_open');
     }
 
-    _likeCard(evt){
+    _likeCard = (evt) => {
         evt.target.classList.toggle('cards__like_type_active');
     }
 
-    _removeCard(evt){
+    _removeCard = (evt) => {
         evt.target.closest('.cards__element').remove();
     }
 
-    createCard(){
+    createCard = () => {
         this._element = this._getTemplate();
         this._setEventListeners();
 

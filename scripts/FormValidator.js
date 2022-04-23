@@ -11,21 +11,21 @@ export default class FormValidator {
       this._createButton = this._forms.querySelector(this._submitButtonSelector);
     };
 
-    _showInputError(input, errorMessage) {
+    _showInputError = (input, errorMessage) => {
         const formError = this._forms.querySelector(`.${input.id}-error`);
         input.classList.add(this._inputErrorClass);
         formError.textContent = errorMessage;
         formError.classList.add(this._errorClass);
       };
     
-    _hideInputError(input) {
+    _hideInputError = (input) => {
         const formError = this._forms.querySelector(`.${input.id}-error`);
         input.classList.remove(this._inputErrorClass);
         formError.classList.remove(this._errorClass);
         formError.textContent = "";
     };
   
-    _checkInputValidity(input) {
+    _checkInputValidity = (input) => {
         if (!input.validity.valid) {
             this._showInputError(input, input.validationMessage);
         } else {
@@ -33,7 +33,7 @@ export default class FormValidator {
         };
     };
 
-    _setEventListeners() {
+    _setEventListeners = () => {
         this._toggleButtonState();
     
         this._inputList.forEach((input) => {
@@ -44,20 +44,20 @@ export default class FormValidator {
         });
     };
 
-    enableValidation() {
+    enableValidation = () => {
       this._forms.addEventListener("submit", (evt) => {
         evt.preventDefault();
       });
       this._setEventListeners();
     };
 
-    _hasInvalidField() {
+    _hasInvalidField = () => {
       return this._inputList.some((input) => {
         return !input.validity.valid;
       });
     };
 
-    _toggleButtonState() {
+    _toggleButtonState = () => {
       if (this._hasInvalidField()) {
         this._createButton.classList.add(this._inactiveButtonClass);
         this._createButton.disabled = true;
