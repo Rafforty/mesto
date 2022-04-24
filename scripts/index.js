@@ -9,7 +9,7 @@ const jobInput = document.querySelector('.popup__input_job');
 const profileName = document.querySelector('.profile__name');
 const profileAbout = document.querySelector('.profile__job');
 
-const cardSelector = document.querySelector('#cards-template').content;
+const cardTemplate = document.querySelector('#cards-template').content;
 const cards = document.querySelector('.cards');
 
 const popupCard = document.querySelector('#popup__addCard');
@@ -95,7 +95,7 @@ function handleCardOpenFullscreen(name, link){
 
 // Подготовка карточки с помощью создания экземпляра класса
 function createNewCard(item){
-  const card = new Card(item, cardSelector,  handleCardOpenFullscreen);
+  const card = new Card(item, cardTemplate,  handleCardOpenFullscreen);
   const newCard = card.createCard();
 
   return newCard;

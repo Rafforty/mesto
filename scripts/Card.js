@@ -1,13 +1,13 @@
 export default class Card {
-    constructor (data, cardSelector, handleCardOpenFullscreen) {
+    constructor (data, cardTemplate, handleCardOpenFullscreen) {
         this._name = data.name;
         this._link = data.link;
-        this._cardSelector = cardSelector;
+        this._cardTemplate = cardTemplate;
         this._handleCardOpenFullscreen = handleCardOpenFullscreen;
     }
 
     _getTemplate = () => {
-        const cardElement = this._cardSelector.querySelector('.cards__element').cloneNode(true);
+        const cardElement = this._cardTemplate.querySelector('.cards__element').cloneNode(true);
         return  cardElement;
     }
 
