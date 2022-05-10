@@ -5,11 +5,11 @@ import Section from '../components/Section.js';
 import PopupWithForm from '../components/PopupWithForm.js';
 import PopupWithImage from '../components/PopupWithImage.js';
 import UserInfo from '../components/UserInfo.js';
-import {profileEditBtn,formProfile,nameInput,jobInput,cardTemplate,formCard,cardAddBtn,cardNameInput,cardImageInput,settings,initialCards} from '../utils/constants.js';
+import {profileEditBtn, formProfile, nameInput, jobInput, cardTemplate, formCard, cardAddBtn, cardNameInput, cardImageInput, settings, initialCards} from '../utils/constants.js';
 
 const popupImage = new PopupWithImage('#popup__preview');
 const popupProfile = new PopupWithForm('#popup__profile', handleProfileFormSubmit);
-const userInfo = new UserInfo('.profile__name','.profile__job');
+const userInfo = new UserInfo('.profile__name', '.profile__job');
 const popupCards = new PopupWithForm('#popup__addCard', handleCardFormSubmit);
 
 // Рендер карточек из массива с помощью Section
@@ -36,7 +36,6 @@ function handleCardOpenFullscreen(link, name){
 function handleProfileFormSubmit() {
   userInfo.setUserInfo();
   popupProfile.close();
-  validationProfileForm.resetValidation();
 }
 
 function openPopupProfile() {
