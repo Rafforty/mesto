@@ -11,8 +11,8 @@ export default class UserInfo {
         }
     }
 
-    setUserInfo() {
-        this._name.textContent = document.querySelector('#profileName').value;
-        this._job.textContent = document.querySelector('#profileJob').value;
+    setUserInfo(name, job) {
+        this._name.textContent = name.value;
+        this._job.textContent = job.value;
     }
 }

@@ -12,29 +12,31 @@ const popupProfile = new PopupWithForm('#popup__profile', handleProfileFormSubmi
 const userInfo = new UserInfo('.profile__name', '.profile__job');
 const popupCards = new PopupWithForm('#popup__addCard', handleCardFormSubmit);
 
-// Рендер карточек из массива с помощью Section
-const initialCardsReverse = initialCards.reverse();
-const renderCards = new Section({items: initialCardsReverse, renderer: (item) => {
+function createCard(item){
     const card = new Card(item, cardTemplate,  handleCardOpenFullscreen);
     const newCard = card.createCard(); 
-    renderCards.addItem(newCard);
- },}, '.cards');
-renderCards.render();
+    return newCard;
+}
+
+const initialCardsReverse = initialCards.reverse();
+const renderSection = new Section({items: initialCardsReverse, renderer: (item) => {
+  renderSection.addItem(createCard(item))
+},},'.cards');
+
 
 // Функция рендера для сабмита формы
-function handleCardFormSubmit() {
-  const card = new Card({name: cardNameInput.value, link: cardImageInput.value}, cardTemplate,  handleCardOpenFullscreen);
-  const newCard = card.createCard(); 
-  renderCards.addItem(newCard);
+function handleCardFormSubmit() { 
+  renderSection.addItem(createCard({name: cardNameInput.value, link: cardImageInput.value}));
   popupCards.close();
 }
+
 // Открытие карточки на полный экран
 function handleCardOpenFullscreen(link, name){
   popupImage.open(name, link);
 }
 
 function handleProfileFormSubmit() {
-  userInfo.setUserInfo();
+  userInfo.setUserInfo(nameInput, jobInput);
   popupProfile.close();
 }
 
@@ -58,8 +60,8 @@ const validationProfileForm = new FormValidator(settings, formProfile);
 validationAddForm.enableValidation();
 validationProfileForm.enableValidation();
 
+renderSection.render();
 
-// Слушатели кнопок и форм
 popupImage.setEventListeners();
 popupProfile.setEventListeners();
 popupCards.setEventListeners();
