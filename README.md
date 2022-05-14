@@ -9,6 +9,8 @@
 3. Адаптивная верстка
 4. DOM (Document Object Model)
 5. JS скрипты
+6. ООП
+7. Классы
 
 **Figma**
 
