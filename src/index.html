@@ -13,13 +13,14 @@
   </header>
   <main class="content">
     <section class="profile">
+      <button class="profile__avatar_edit-button" type="button" aria-label="avatar edit"></button>
       <img class="profile__avatar" src="<%=require('./images/profile__avatar.jpg')%>" alt="Аватар">
       <div class="profile__info-container">
         <div class="profile__wrapper">
           <h1 class="profile__name">Жак-Ив Кусто</h1>
           <button class="profile__edit" type="button" aria-label="edit profile"></button>
         </div>
-        <h2 class="profile__job">Исследователь океана</h2>
+        <h2 class="profile__about">Исследователь океана</h2>
       </div>
       <button class="profile__addbutton" type="button" aria-label="add button"></button>
     </section>
@@ -29,19 +30,19 @@
   <footer class="footer">
     <p class="footer__copyright">&COPY; 2022 Mesto Russia</p>
   </footer>
-  <!-- Форма 1 -->
+  <!-- Попап 1 (профиль) -->
   <div class="popup" id="popup__profile">
     <form class="popup__container" id="popup__container_profile" name="profileEditForm" novalidate>
       <button class="popup__close" type="button" aria-label="close"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
       <input class="popup__input popup__input_name" type="text" name="name" id="profileName" placeholder="Имя" value="Жак-Ив Кусто" minlength="2" maxlength="40" required>
       <span class="popup__input-error profileName-error"></span>
-      <input class="popup__input popup__input_job" type="text" name="job" id="profileJob" placeholder="О себе" value="Исследователь океана" minlength="2" maxlength="200" required>
-      <span class="popup__input-error profileJob-error"></span>
+      <input class="popup__input popup__input_about" type="text" name="about" id="profileAbout" placeholder="О себе" value="Исследователь океана" minlength="2" maxlength="200" required>
+      <span class="popup__input-error profileAbout-error"></span>
       <button class="popup__submit" type="submit">Сохранить</button>
     </form>
   </div>
-  <!-- Форма 2 -->
+  <!-- Попап 2 (добавление карточки)-->
   <div class="popup" id="popup__addCard">
     <form class="popup__container" id="popup__container_place" name="newPlaceForm" novalidate>
       <button class="popup__close" id="popup__close-place" type="button" aria-label="close"></button>
@@ -53,6 +54,24 @@
       <button class="popup__submit" id="popup__submit_place" type="submit">Создать</button>
     </form>
   </div>
+  <!-- Попап 3 (подтверждение удаления) -->
+  <div class="popup" id="popup__deleteCard">
+    <form class="popup__container popup__container_delete">
+      <h2 class="popup__title">Вы уверены?</h2>
+      <button class="popup__submit" id="popup__submit_delete" type="submit">Да</button>
+      <button class="popup__close" id="popup__close-delete" type="button" aria-label="close"></button>
+    </form>
+  </div>
+  <!-- Попап 4 (обновление аватарки) -->
+  <div class="popup" id="popup__avatarEdit">
+    <form class="popup__container popup__container_avatar" id="popup__container_avatar_edit" name="profileEditForm" novalidate>
+      <button class="popup__close" id="popup__close-place" type="button" aria-label="close"></button>
+      <h2 class="popup__title">Обновить аватар</h2>
+      <input class="popup__input" id="avatarLink" type="url" name="link" placeholder="Ссылка на аватар" value="" required>
+      <span class="popup__input-error avatarLink-error"></span>
+      <button class="popup__submit" id="popup__submit_avatar_edit" type="submit">Сохранить</button>
+    </form>
+    </div>
   <!-- Попап картинки -->
   <div class="popup" id="popup__preview">
     <figure class="popup__figure">
@@ -68,7 +87,10 @@
       <img class="cards__image" src="#" alt="#">
       <div class="cards__caption">
         <h3 class="cards__text"></h3>
-        <button class="cards__like" type="button" aria-label="like"></button>
+          <div class="cards__like_container">
+            <button class="cards__like" type="button" aria-label="like"></button>
+            <span class="cards__like-count">0</span>
+          </div>
       </div>
     </article>
   </template>

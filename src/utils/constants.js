@@ -1,12 +1,16 @@
 const profileEditBtn = document.querySelector('.profile__edit');
 const formProfile = document.querySelector('#popup__container_profile');
 const nameInput = document.querySelector('.popup__input_name');
-const jobInput = document.querySelector('.popup__input_job');
+const aboutInput = document.querySelector('.popup__input_about');
 
 const cardTemplate = document.querySelector('#cards-template').content;
 
 const formCard = document.querySelector('#popup__container_place');
 const cardAddBtn = document.querySelector('.profile__addbutton');
+const avatarEditButton = document.querySelector('.profile__avatar_edit-button');
+const profileAvatar = document.querySelector('.profile__avatar');
+const avatarOpenBtn = document.querySelector('.profile__avatar_edit-button');
+const avatarForm = document.querySelector('#popup__container_avatar_edit');
 
 const settings = {
     formSelector: '.popup__container',
@@ -45,4 +49,4 @@ const initialCards = [
       }
     ];  
 
-    export {profileEditBtn,formProfile,nameInput,jobInput,cardTemplate,formCard,cardAddBtn,settings,initialCards}
+    export {profileEditBtn,formProfile,nameInput,aboutInput,cardTemplate,formCard,cardAddBtn,settings,avatarEditButton,profileAvatar,avatarOpenBtn,avatarForm}
