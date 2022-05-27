@@ -4,6 +4,7 @@ export default class PopupWithSubmit extends Popup {
     constructor(popupSelector){
         super(popupSelector);
         this._popupForm = this._popup.querySelector('.popup__container');
+        this._formButton = this._popupForm.querySelector('.popup__submit');
         this._formButtonText = this._popupForm.querySelector('.popup__submit').textContent;
     }
 
@@ -21,9 +22,9 @@ export default class PopupWithSubmit extends Popup {
 
     renderLoading(isLoad){
         if(isLoad){
-            this._popupForm.querySelector('.popup__submit').textContent = 'Удаление...'
+            this._formButton.textContent = 'Удаление...'
         } else {
-            this._popupForm.querySelector('.popup__submit').textContent = this._formButtonText
+            this._formButton.textContent = this._formButtonText
         }
     }
 }
