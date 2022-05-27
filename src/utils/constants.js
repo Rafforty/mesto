@@ -7,9 +7,8 @@ const cardTemplate = document.querySelector('#cards-template').content;
 
 const formCard = document.querySelector('#popup__container_place');
 const cardAddBtn = document.querySelector('.profile__addbutton');
-const avatarEditButton = document.querySelector('.profile__avatar_edit-button');
 const profileAvatar = document.querySelector('.profile__avatar');
-const avatarOpenBtn = document.querySelector('.profile__avatar_edit-button');
+const avatarOpenBtn = document.querySelector('.profile__avatarbutton');
 const avatarForm = document.querySelector('#popup__container_avatar_edit');
 
 const settings = {
@@ -49,4 +48,4 @@ const initialCards = [
       }
     ];  
 
-    export {profileEditBtn,formProfile,nameInput,aboutInput,cardTemplate,formCard,cardAddBtn,settings,avatarEditButton,profileAvatar,avatarOpenBtn,avatarForm}
+    export {profileEditBtn,formProfile,nameInput,aboutInput,cardTemplate,formCard,cardAddBtn,settings,profileAvatar,avatarOpenBtn,avatarForm}
