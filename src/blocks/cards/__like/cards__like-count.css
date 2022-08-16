@@ -8,4 +8,6 @@
     line-height: 16px;
     background-position-x: 50%;
     background-position-y: 0%;
+    -webkit-box-pack: center; /* justify-content */
+    -webkit-box-align: center; /* align-items */
 }
