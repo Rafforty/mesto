@@ -4,4 +4,10 @@
     width: 22px;
     height: 35px;
     margin-right: 20px;
+    display: -webkit-flex;
+    -webkit-justify-content: center;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    display: flex;
+    justify-content: center;
 }
