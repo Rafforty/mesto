@@ -6,6 +6,9 @@
     background-color: transparent;
     cursor: pointer;
     background-position: center;
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: 0%;
 }
 
 .cards__like:hover {
